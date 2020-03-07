@@ -1,0 +1,49 @@
+<template name="friendsDetails">
+    <div class="fill-200"></div>
+    <h1>Details</h1>
+
+    <div class="container-fluid">
+        {{# with friendDetails}}
+            <div class="row">
+                <div class="col-4">
+                    <img src="./img/{{profile.avatar}}" style="height: 200px; width: 200px;">
+                </div>
+                <div class="col-8">
+                 <p>ID:  {{_id}}</p>   
+                 <h5>{{profile.first_name}} {{profile.last_name}}</h5>
+                </div>
+            </div>
+            <div class="fill-100"></div>
+            <div class="row">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="active"><a data-toggle="tab" href="#home"><h5>Video</h5></a></li>
+                    <li><a data-toggle="tab" href="#menu1">Voice</a></li>
+                    <br/>
+                    <li><a data-toggle="tab" href="#menu2">Text-chat</a></li>
+                </ul>
+            </div>
+            <br/>
+            <div class="row">
+                <br/>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                      <h3>Video</h3>
+                      {{> videoTemplate}}
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                      <h3>Voice</h3>
+                      {{> voiceTemplate}}
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                      <h3>Text</h3>
+                    {{> textTemplate}}
+                    </div>
+                    
+                  </div>
+            </div>
+        {{/with}}
+
+    </div>
+    <br />
+
+</template>
