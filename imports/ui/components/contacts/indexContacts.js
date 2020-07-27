@@ -7,3 +7,4 @@ import './payment';
 import './chatHistory';
 import './videoChat';
 import './phone';
+import './singleContact';

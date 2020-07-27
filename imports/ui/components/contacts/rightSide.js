@@ -16,12 +16,12 @@ Template.rightSide.events({
   //   document.getElementById("huggo").style.width = "10px";
   
   // },
-  'click .closebtn': function () {
+  'click .btnClose': function () {
     document.getElementById("myChatnew").style.width = "16.66%";
     },
-  'click .person': function () {
-    document.getElementById("myChatnew").style.width = "75%";
-  },
+  // 'click .person': function () {
+  //   document.getElementById("myChatnew").style.width = "75%";
+  // },
   'click .utilitybtn': function () {
     document.getElementById("myChatnew").style.width = "100%";
   },

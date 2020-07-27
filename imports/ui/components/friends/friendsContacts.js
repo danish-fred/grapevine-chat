@@ -1,21 +1,21 @@
-import './contacts.html';
+import './friendsContacts.html';
 
-Template.contacts.onCreated(function () {
+Template.friendsContacts.onCreated(function () {
     this.subscribe('allUsers')
 
 });
 
-Template.contacts.onRendered(function () {
+Template.friendsContacts.onRendered(function () {
 
 });
 
-Template.contacts.helpers({
+Template.friendsContacts.helpers({
     friend () {
         // find all user but the currentuser  (you dont want to list yourself )
         return Meteor.users.find({_id:{$ne:Meteor.userId()}});
     }
 });
 
-Template.contacts.events({
+Template.friendsContacts.events({
 
 });

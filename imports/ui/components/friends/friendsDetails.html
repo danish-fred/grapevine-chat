@@ -1,9 +1,9 @@
 <template name="friendsDetails">
-    <div class="fill-200"></div>
+    <!-- <div class="fill-200"></div> -->
     <h1>Details</h1>
 
-    <div class="container-fluid">
-        {{# with friendDetails}}
+    <!-- <div class="container-fluid">
+        {{# each friendDetails}}
             <div class="row">
                 <div class="col-4">
                     <img src="./img/{{profile.avatar}}" style="height: 200px; width: 200px;">
@@ -38,12 +38,66 @@
                       <h3>Text</h3>
                     {{> textTemplate}}
                     </div>
-                    
-                  </div>
+                </div>
             </div>
-        {{/with}}
-
+        {{/each}}
+          
     </div>
-    <br />
-
+    <br /> -->
+    <div class="container-fluid">
+        <div class="">
+          <div class="">
+            {{#each friendsDetails}}
+            <div class="person">
+                <div class="row">
+                  <div class="col-2">
+                    <div class="img_cont">
+                      <img src="./img/{{profile.avatar}}" class="user_150">
+                      <span class="online_icon offline"></span>
+                    </div>
+                  </div>
+                  <div class="col-4 user_info">
+                    <span>{{_id}}</span>
+                    <span>{{profile.first_name}}</span>
+                    <br>
+                    <span>{{profile.last_name}}</span>
+                    <br>
+                    
+                   <div class="fill-100"></div>
+                  </div>
+                  
+                  <div class="col-1">
+                    <button class="btn btn-outline-primary btn-lg btn-block btnVideo" data-target="videoChat">
+                      <i class="fas fa-video" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="col-1">
+                    <button class="btn btn-outline-primary btn-lg btn-block btnPhone" data-target="phone">
+                      <i class="fas fa-phone " aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  
+                  <div class="col-1">
+                    <button class="btn btn-outline-primary btn-lg btn-block btnChat" data-target="chatPage">
+                      <i class="fas fa-comments "></i>
+                    </button>
+                  </div>
+<!--                  
+                  <div class="col-1">
+                    <button type="button" class="btn btn-block btn-outline-dark btnClose">
+                      <i class="far fa-window-close">Close</i>
+                    </button>
+                  </div> -->
+                </div>
+            </div>
+            {{/each}}
+          </div>
+         
+        </div>
+        <!--<br />
+         <div class="fill-100"></div> -->
+        <div class="row">
+          {{> Template.dynamic template=useContacts }}
+        </div>
+      </div>
 </template>

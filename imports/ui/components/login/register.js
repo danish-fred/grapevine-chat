@@ -1,5 +1,13 @@
 import './register.html';
-import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor'
+import { Template } from 'meteor/templating'
+import { Accounts } from 'meteor/accounts-base'
+
+Template.register.onCreated(function () {
+})
+
+Template.register.helpers({
+})
 
 
 Template.register.events({
@@ -11,41 +19,28 @@ Template.register.events({
     $('.card-register').hide();
     $('.card-login').fadeIn();
   },
-  'submit .register-form': function (event) {
-    const target = event.target
-    const user_name = target.user_name.value;
-    const first_name = target.first_name.value;
-    const last_name = target.last_name.value;
-    const avatar = target.avatar.value;
+  'submit #registerForm' (event, template) {
+    event.preventDefault()
+    const target = event.target;
     const email = target.email.value;
     const password = target.password.value;
-    const password2 = target.password2.value;
-    Id = Meteor.userId;
+    const avatar = target.avatar.value;
+    const first_name = target.first_name.value;
+    const last_name = target.last_name.value;
 
-    if (isNotEmpty(email) &&
-      isNotEmpty(user_name) &&
-      isNotEmpty(first_name) &&
-      isNotEmpty(last_name) &&
-      isNotEmpty(avatar) &&
-      isNotEmpty(password) &&
-      isEmail(email) &&
-      areValidPasswords(password, password2))
-
-    //makeAvatar(gender) 
-    {
-      // Create New User
-      Accounts.createUser({
-        username: user_name,
-        email: email,
-        password: password,
-        profile: {
-          usertype: 'customer',
-          first_name: first_name,
-          last_name: last_name,
-          avatar: avatar,
-        }
-      }, 
-      function (error) {
+    const params = {
+     
+     
+     
+    }
+ 
+      Accounts.createUser({email: email, 
+                          password: password, 
+                          profile: {
+                            first_name: first_name,
+                            last_name : last_name,
+                            avatar: avatar }
+                          },  (error ) => {
         if (error) {
           Bert.alert("There was an error with registration", 'danger', "growl-top-right"); //hideDelay: 2000,
         } else {
@@ -53,18 +48,7 @@ Template.register.events({
           FlowRouter.go('/bazarHome');
         }
       });
-      
-    }
-    
-    // Meteor.call('addUserRoles', (error) => {
-    //   if (error) {
-    //     Bert.alert("There was an error with pølser", 'danger', "growl-top-right"); //hideDelay: 2000,
-    //   } else {
-    //     Bert.alert("Pølser Created! You are now logged in", 'success', "growl-top-right");
-    //     FlowRouter.go('/welcome');
-    //   }
-    // });
-    // return false;
+        
   },
 
   "submit .login-form": function (event) {

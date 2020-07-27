@@ -5,14 +5,8 @@ import { Meteor } from 'meteor/meteor';
 import { Session } from 'meteor/session';
 import { Template } from 'meteor/templating';
 
-// import './phone.js';
-// import './moneyLogin.js';
-// import './chatHistory.js';
-// import './videoChat.js';
-// import './chatPage.js';
-// import '../build/appCalendar.js';
-
 Template.chatHead.onCreated(function () {
+  SubsCache.subscribe('users.all');
   Session.set('chatTemplate', "");
 });
 
@@ -26,9 +20,13 @@ Template.chatHead.helpers({
   useContacts () {
       return Session.get('chatTemplate');
   },
+  member () {
+    return Meteor.users.find({_id: Session.get('choosenFriend')})
+  }
 });
 
 Template.chatHead.events({
+  
   'click .btnHistory'(event) {
     event.preventDefault();
 
@@ -47,18 +45,11 @@ Template.chatHead.events({
     const targetName = $(event.currentTarget).attr('data-target');
     Session.set('chatTemplate', targetName)
   },
-  'click .btnMoney'(event) {
-    event.preventDefault();
-
-    const targetName = $(event.currentTarget).attr('data-target');
-    Session.set('chatTemplate', targetName)
-  },
+  
   'click .btnChat'(event) {
     event.preventDefault();
 
     const targetName = $(event.currentTarget).attr('data-target');
     Session.set('chatTemplate', targetName)
   },
-
-
 });
