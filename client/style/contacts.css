@@ -1,4 +1,7 @@
-
+ .scroll {
+  height: 50%;
+  overflow-y: auto; 
+}
 #chat{
   padding-top: 70px;
   width: 100%;
@@ -17,11 +20,11 @@
 .card{
   /* height: 100%; */
   /* border-radius: 15px !important; */
-  background-color: rgba(201, 211, 205, 0.158) !important;
-}
+  background-color: rgba(145, 190, 163, 0.158) !important;
+} 
 .contacts_body{
   padding:  0.75rem 0 !important;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   white-space: nowrap;
 }
 .msg_card_body{
@@ -93,8 +96,8 @@ background-color: rgba(86, 209, 168, 0.3) !important;
   background-color: rgba(226, 9, 9, 0.3);
 }
 .user_img{
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   border:1.5px solid #f5f6fa;
 
 }
@@ -113,6 +116,11 @@ background-color: rgba(86, 209, 168, 0.3) !important;
   height: 40px;
   width: 40px;
 }
+.user_150{
+  height: 150px;
+  width: 150px;
+  border:1.5px solid black;
+}
 .online_icon{
 position: absolute;
 height: 15px;
@@ -129,15 +137,19 @@ background-color: #c23616 !important;
 .user_info{
 margin-top: auto;
 margin-bottom: auto;
-margin-left: 15px;
+margin-left: 10px;
 }
 .user_info span{
 font-size: 20px;
-color: white;
+color: black;
 }
+.user_info span:hover{
+  background-color: #82ccdd;
+  color: white;
+  }
 .user_info p{
 font-size: 10px;
-color: rgba(255,255,255,0.6);
+/* color: rgba(255,255,255,0.6); */
 }
 .video_cam{
 margin-left: 50px;

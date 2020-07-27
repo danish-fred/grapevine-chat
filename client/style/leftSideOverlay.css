@@ -55,10 +55,10 @@
     padding: 1rem; */
   }
   .collapsed{
-    background-color: blueviolet;
+    background-color: rgb(230, 217, 243);
   }
   .collapsed:hover{
-    background-color: goldenrod;
+    background-color: rgb(253, 253, 252);
   }
   .openbtn{
     position: relative;

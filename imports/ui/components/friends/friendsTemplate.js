@@ -11,7 +11,8 @@ Template.friendsTemplate.onRendered(function () {
 
 Template.friendsTemplate.helpers({
     friend () {
-        return Meteor.users.find({});
+        // find all user but the currentuser  (you dont want to list yourself )
+        return Meteor.users.find({_id:{$ne:Meteor.userId()}});
     }
 });
 
