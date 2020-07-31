@@ -1,14 +1,4 @@
 import './rightSide.html';
-// import './video_chat.js';
-// import './chatpage.js';
-// import './phone.js';
-// import './chat_history.js';
-// import './payment.js';
-// import './money_login.js';
-// import '../build/app_calendar.js';
-// import '../socials/wall/m-and-m/account_overview.js';
-
-
 
 Template.rightSide.events({
 

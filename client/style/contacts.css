@@ -134,10 +134,14 @@ border:1.5px solid white;
 .offline{
 background-color: #c23616 !important;
 }
+.side{ 
+  overflow-x: auto;
+}
 .user_info{
 margin-top: auto;
 margin-bottom: auto;
 margin-left: 10px;
+
 }
 .user_info span{
 font-size: 20px;
@@ -256,4 +260,8 @@ margin-bottom: 15px !important;
   color: black;
   border-color: black ;
   border-width: thin;
+}
+.commun {
+  height: 500px;
+  overflow-y: scroll;
 }

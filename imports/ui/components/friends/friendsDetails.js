@@ -9,7 +9,7 @@ Template.friendsDetails.onCreated(function () {
 });
 
 Template.friendsDetails.onRendered(function () {
-
+ 
 });
 
 Template.friendsDetails.helpers({

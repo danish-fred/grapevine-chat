@@ -1,2 +1,4 @@
+import { VideoCalls } from './videoCalls/collectionVideoCalls';
 
-// export { ShopsMenu, ShopsNum, }
+
+export { VideoCalls, }

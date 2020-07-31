@@ -4,7 +4,7 @@ import './build/indexBuild';
 import './contacts/indexContacts';
 import './login/indexLogin';
 import './friends/indexFriends';
-import './chat/indexChat';
+// import './chat/indexChat';
 
 
 

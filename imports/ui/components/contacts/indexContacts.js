@@ -8,3 +8,4 @@ import './chatHistory';
 import './videoChat';
 import './phone';
 import './singleContact';
+import './navAcceptModal';
